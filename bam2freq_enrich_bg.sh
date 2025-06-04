@@ -83,7 +83,7 @@ std_bg="${bam_prefix}_bed2bg.std.bedgraph"
 # run jupyter notebook
 cd ..
 pwd
-NB_ARGS="${lib_name} ${ref} ${fdr} $(cut -f1 ${directory}${ref}.chrom.sizes) ${samp_size} ${std_bg} ${directory} ${bed_file} ${str_type}" jupyter nbconvert --to notebook --execute NoPlot_Freq_Enrich_Sigtest.ipynb
+NB_ARGS="${lib_name} ${ref} ${fdr} $(cut -f1 ${directory}${ref}.chrom.sizes) ${samp_size} ${std_bg} ${directory} ${bed_file} ${str_type}" jupyter nbconvert --to notebook --execute Freq_Enrich_Sigtest.ipynb
 
 output_dir="${directory}${lib_name}_EnrichTest_FDR_${fdr}/"
 cd ${output_dir}
@@ -91,20 +91,10 @@ cd ${output_dir}
 pwd
 
 # write out total result (all chromosomes)
-if [ ! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_enrichTest_master.txt" ]
-then
-    cat $(sed '1d' *_master.txt) > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_enrichTest_master.txt"
-fi
-
-if [! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup.bed" ]
-then
-    cat *_pass_pileup.bed > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup.bed"
-fi
-
-if [! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup.bed" ]
-then
-    cat *_fail_pileup.bed > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup.bed"
-fi
+#if [ ! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_enrichTest_master.txt" ]
+#then
+#    cat $(sed '1d' *_master.txt) > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_enrichTest_master.txt"
+#fi
 
 
 # output pileups to bedgraph files
@@ -116,3 +106,33 @@ then
         bedtools genomecov -i ${file} -g "${directory}/${ref}.chrom.sizes" -bg > "${file_pref}_bed2bg.bedgraph";
     done
 fi
+
+if [ ! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup.bed" ]
+then
+    cat *_pass_pileup.bed > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup.bed";
+    total_pass="${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup.bed"
+fi
+
+if [ ! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup.bed" ]
+then
+    cat *_fail_pileup.bed > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup.bed";
+    total_fail="${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup.bed"
+fi
+
+if [ ! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup_bed2bg.bedgraph" ]
+then
+    cat *_fail_pileup_bed2bg.bedgraph > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_fail_pileup_bed2bg.bedgraph"
+fi
+
+if [ ! -f "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup_bed2bg.bedgraph" ]
+then
+    cat *_pass_pileup_bed2bg.bedgraph > "${lib_name}_total_FDR_${fdr}_pseudoGEM_${samp_size}_pass_pileup_bed2bg.bedgraph"
+fi
+
+pass_lines=$(wc -l < ${total_pass})
+fail_lines=$(wc -l < ${total_fail})
+percentage=100
+echo "Pass Percentage: "
+echo "scale=4 ; $pass_lines / ($pass_lines + $fail_lines) * $percentage" | bc
+echo "\nFail Percentage: "
+echo "scale=4 ; $fail_lines / ($pass_lines + $fail_lines) * $percentage" | bc
