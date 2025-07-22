@@ -1,5 +1,5 @@
 Download the full folder
-In the folder, creat a directory to store your bam file, and the sizes file corresponding to your reference genome
+In the folder, create a directory to store your bam file along with the sizes file corresponding to your reference genome
 Install the required packages outlined in requirements.txt:
 pip install -r v.0.0.1/requirements.txt
 
