@@ -9,7 +9,7 @@ if __name__ == '__main__':
     bed_file = argv[1] ## Name of the bed file ##
     size_file = argv[2] ## Name of the reference file ##
 
-    std_bed_file = bed_file.split(".")[0] + ".std.bed"
+    std_bed_file = bed_file.replace(".bed", ".std.bed")
 
     if os.path.exists(directory + std_bed_file) == False:
         chrom_lst = []
