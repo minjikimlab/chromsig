@@ -1,16 +1,8 @@
-# chromsig
-A Python package for de-noising 1-dimensional chromatin data.
+# Chrom-Sig: de-noising 1-dimensional genomic profiles by signal processing methods
 
 ## Features
-* Can process Single End and Paired End files
-* Can process ChIP-seq, ATAC-seq, CUT&RUN, or snATAC-seq files
-* Can take either a .bam or .bed file as input
-* Produces pass pileup and fail pileup .bed and .bedgraph files
-* Produces peak-calling results fro total and pass .bedgraph files using SICER
-
-## Drawbacks
-* Only works on files that have either Single or Paired End Data (cannot have a mix of both)
-* Uses large amount of memory for denoising process
+* Chrom-Sig takes in Single-End or Paired-End read .bam or .bed files generated from ChIP-seq, ATAC-seq, snATAC-seq, or CUT&RUN experiments, among others 
+* As an output, Chrom-Sig produces "pass" reads .bed file and .bedgraph files, along with peaks called by SICER on "pass" reads
 
 ## Installation
 Start by installing pyBedGraph and bedtools using the following commands:
@@ -69,3 +61,8 @@ EXAMPLE:
 
 ## Testing chromsig
 
+
+## Citation
+"Chrom-Sig: de-noising 1-dimensional genomic profiles by signal processing methods" by Nandita J. Gupta, Zachary Apell, and Minji Kim. [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.08.12.670000v1) (2025), 670000.
+
+For questions or bug reports, contact Nandita (njgupta@umich.edu) or visit the "Issues" page.
