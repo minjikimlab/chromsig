@@ -33,7 +33,7 @@ function usage
             --type          Type of read in your dataset, Single End or Paired End (ex: SE or PE).
 
         OPTIONS:
-            --lib_name      Name of dataset library (ex: For GM12878_ATAC-seq_ENCFF415FEC.bam, this would be ENCFF415FEC).
+            --lib           Name of dataset library (ex: For GM12878_ATAC-seq_ENCFF415FEC.bam, this would be ENCFF415FEC).
             --plot          Produce histogram plots of distances between read fragments (only for Paired End), type 'true' if you want plots, skip this option if you do not.
             
         EXAMPLE:
