@@ -6,7 +6,7 @@
 
 ## Installation
 This program requires Python 3.9 to be able to run.
-Start b yinstalling Chrom-Sig using the following command:
+Start by installing Chrom-Sig using the following command:
 ```
 git clone https://github.com/minjikimlab/chromsig.git
 ```
