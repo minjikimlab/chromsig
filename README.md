@@ -47,7 +47,6 @@ In each of the bash files (files ending in .sh), modify the parameters
 to match the account using which you are submitting the job, the output directory for the job report, the output directory for any error reports, and the email address you want the job report to be mailed to.
 
 ## Running chromsig
-
 In the same directory (.../chromsig/v0.0.3), create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/hg38.chrom.sizes)).
 Return to .../chromsig/v0.0.3, and in your terminal enter the following command:
 
@@ -74,7 +73,10 @@ EXAMPLE:
     sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed GM12878_ATAC-seq_ENCFF415FEC.bam --dir /nfs/turbo/umms-minjilab/njgupta/chromsig/ATAC-seq_PE/ --r hg38 --fdr 0.1 --num 5000 --type PE
 
 ## Testing chromsig
-
+Two test files have been included in the .../chromsig directory -- the bed file contains test data from chr21 of the GM12878_ATAC-seq_ENCFF415FEC.bam file, and the hg38_test.chrom.sizes file contains the size of chr21 needed to run this data. Move both of these files to your Data Directory folder .../chromsig/v0.0.3/Data_Directory. Navigate back to .../chromsig/v0.0.3, and run the following command:
+```
+sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed chromsig_test_file.bed --dir <PATH>/chromsig/v0.0.3/Data_Directory/ --r hg38_test --fdr 0.1 --num 10 --type PE
+```
 
 ## Citation
 "Chrom-Sig: de-noising 1-dimensional genomic profiles by signal processing methods" by Nandita J. Gupta, Zachary Apell, and Minji Kim. [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.08.12.670000v1) (2025), 670000.
