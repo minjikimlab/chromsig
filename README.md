@@ -37,6 +37,15 @@ If you are using conda, use the following command:
 
 `conda install --file requirements.txt`
 
+In each of the bash files (files ending in .sh), modify the parameters
+```
+#SBATCH --account=minjilab0 
+#SBATCH --output=/nfs/turbo/umms-minjilab/njgupta/chromsig/overall_program_output/slurm-%j.out
+#SBATCH --error=/nfs/turbo/umms-minjilab/njgupta/chromsig/overall_program_error/slurm-%j.out
+#SBATCH --mail-user=njgupta@umich.edu
+```
+to match the account using which you are submitting the job, the output directory for the job report, the output directory for any error reports, and the email address you want the job report to be mailed to.
+
 ## Running chromsig
 
 In the same directory (.../chromsig/v0.0.3), create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/hg38.chrom.sizes)).
