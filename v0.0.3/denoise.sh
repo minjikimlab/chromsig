@@ -90,7 +90,7 @@ cd ${directory}
 
 bedtools merge -i ${std_bed} > "${lib_name}_merge_result.bed"
 
-bedtools summary -i "${lib_name}_merge_result.bed" -g hg38.chrom.sizes | column -t > "${lib_name}_coverage_summary.txt"
+bedtools summary -i "${lib_name}_merge_result.bed" -g "${ref}.chrom.sizes" | column -t > "${lib_name}_coverage_summary.txt"
 
 
 awk 'NR<=1 {next} { 
