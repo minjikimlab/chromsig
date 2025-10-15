@@ -27,6 +27,8 @@ python -m venv pyBedGraph
 source pyBedGraph/bin/activate
 ```
 ### Required Modules
+Navigate to the directory .../chromsig/v0.0.3.
+
 Install all required packages listed in [requirements.txt](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/requirements.txt) using the following command:
 
 `pip install -r requirements.txt`
@@ -34,10 +36,6 @@ Install all required packages listed in [requirements.txt](https://github.com/mi
 If you are using conda, use the following command:
 
 `conda install --file requirements.txt`
-
-Install the chromsig package using the following command:
-
-`git clone https://github.com/minjikimlab/chromsig.git`
 
 ## Running chromsig
 
@@ -59,7 +57,7 @@ ARGUMENTS:
 
 OPTIONS:
       
-    --lib_name      Name of dataset library (ex: For GM12878_ATAC-seq_ENCFF415FEC.bam, this would be ENCFF415FEC).
+    --lib           Name of dataset library (ex: For GM12878_ATAC-seq_ENCFF415FEC.bam, this would be ENCFF415FEC).
     --plot          Produce histogram plots of distances between read fragments (only for Paired End), type 'true' if you want plots, skip this option if you do not.
             
 EXAMPLE:
