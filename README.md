@@ -5,7 +5,13 @@
 * As an output, Chrom-Sig produces "pass" reads .bed file and .bedgraph files, along with peaks called by SICER on "pass" reads
 
 ## Installation
-Start by installing pyBedGraph and bedtools using the following commands:
+This program requires Python 3.9 to be able to run.
+Start b yinstalling Chrom-Sig using the following command:
+```
+git clone https://github.com/minjikimlab/chromsig.git
+```
+Navigating to the directory .../chromsig, do the following:
+Install pyBedGraph and bedtools using the following commands:
 ### bedtools
 ```
 $ wget https://github.com/arq5x/bedtools2/releases/download/v2.31.0/bedtools-2.31.0.tar.gz
@@ -20,7 +26,7 @@ python -m venv pyBedGraph
 source pyBedGraph/bin/activate
 ```
 ### Required Modules
-Install all required packages listed in [requirements.txt](https://github.com/minjikimlab/chromsig/blob/main/v0.0.2/requirements.txt) using the following command:
+Install all required packages listed in [requirements.txt](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/requirements.txt) using the following command:
 
 `pip install -r requirements.txt`
 
