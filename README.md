@@ -39,7 +39,7 @@ If you are using conda, use the following command:
 
 ## Running chromsig
 
-Navigate into the chromsig directory, and create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.2/hg38.chrom.sizes)).
+In the same directory (.../chromsig/v0.0.3), create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.2/hg38.chrom.sizes)).
 Return to the chromsig directory, and in you terminal enter the following command:
 
 `sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed <BAM/BED> --dir <PATH_TO_DATA_DIR> --r <GENOME> --fdr <FDR_THRESH> --num <NUM_OF_PSEUDO_SAMPLES> --type <READ_TYPE> --lib <LIBRARY> --plot <TRUE>`
