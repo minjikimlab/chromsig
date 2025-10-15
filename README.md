@@ -11,6 +11,7 @@ Start by installing Chrom-Sig using the following command:
 git clone https://github.com/minjikimlab/chromsig.git
 ```
 Navigating to the directory .../chromsig, do the following:
+
 Install pyBedGraph and bedtools using the following commands:
 ### bedtools
 ```
