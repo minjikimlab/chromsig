@@ -50,7 +50,7 @@ to match the account using which you are submitting the job, the output director
 In the same directory (.../chromsig/v0.0.3), create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/hg38.chrom.sizes)).
 Return to .../chromsig/v0.0.3, and in your terminal enter the following command:
 
-`sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed <BAM/BED> --dir <PATH_TO_DATA_DIR> --r <GENOME> --fdr <FDR_THRESH> --num <NUM_OF_PSEUDO_SAMPLES> --type <READ_TYPE> --lib <LIBRARY> --plot <TRUE>`
+`sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed <BAM/BED> --dir <PATH_TO_DATA_DIR> --r <GENOME> --fdr <FDR_THRESH> --num <NUM_OF_PSEUDO_SAMPLES> --type <READ_TYPE> --lib <LIBRARY> --plot <TRUE> --modload <TRUE>`
 
 The following is a description of each of the arguments in the command:
 
@@ -67,10 +67,11 @@ OPTIONS:
       
     --lib           Name of dataset library (ex: For GM12878_ATAC-seq_ENCFF415FEC.bam, this would be ENCFF415FEC).
     --plot          Produce histogram plots of distances between read fragments (only for Paired End), type 'true' if you want plots, skip this option if you do not.
+    --modload       Load python 3.9, bedtools, and samtools; type 'true' if you want to use module load to load these, skip this option if you do not.
             
 EXAMPLE:
 
-    sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed GM12878_ATAC-seq_ENCFF415FEC.bam --dir /nfs/turbo/umms-minjilab/njgupta/chromsig/ATAC-seq_PE/ --r hg38 --fdr 0.1 --num 5000 --type PE
+    sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed GM12878_ATAC-seq_ENCFF415FEC.bam --dir /nfs/turbo/umms-minjilab/njgupta/chromsig/ATAC-seq_PE/ --r hg38 --fdr 0.1 --num 5000 --type PE --modload true
 
 ## Recommended parameters
 We recommend allocating about an hour of runtime and 25 GB of memory per 50 million paired-end reads. The results presented in the manuscript have been produced by running Chrom-Sig with --num 5000 --fdr 0.1 or --num 5000 --fdr 0.2.  
@@ -78,7 +79,7 @@ We recommend allocating about an hour of runtime and 25 GB of memory per 50 mill
 ## Testing Chrom-Sig
 Two test files have been included in the .../chromsig directory -- the bed file contains test data from chr21 of the GM12878_ATAC-seq_ENCFF415FEC.bam file, and the hg38_test.chrom.sizes file contains the size of chr21 needed to run this data. Move both of these files to your Data Directory folder .../chromsig/v0.0.3/Data_Directory. Navigate back to .../chromsig/v0.0.3, and run the following command:
 ```
-sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed chromsig_test_file.bed --dir <PATH>/chromsig/v0.0.3/Data_Directory/ --r hg38_test --fdr 0.1 --num 10 --type PE
+sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed chromsig_test_file.bed --dir <PATH>/chromsig/v0.0.3/Data_Directory/ --r hg38_test --fdr 0.1 --num 10 --type SE --modload true
 ```
 
 ## Citation
