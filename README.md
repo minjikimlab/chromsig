@@ -1,6 +1,6 @@
 # Chrom-Sig: de-noising 1-dimensional genomic profiles by signal processing methods
 
-Al processed data generated using chromsig v0.0.3 can be found at [this link](https://www.dropbox.com/scl/fo/dri58rnvghvbswzks5ox6/AFz6TKN7NbiASQMMI3HHo8c?rlkey=jel3nvo6azx5t89w76jxa5cuj&st=mcj5touo&dl=0).
+All processed data generated using chromsig v0.0.3 can be found at [this link](https://www.dropbox.com/scl/fo/dri58rnvghvbswzks5ox6/AFz6TKN7NbiASQMMI3HHo8c?rlkey=jel3nvo6azx5t89w76jxa5cuj&st=mcj5touo&dl=0).
 
 ## Features
 * Chrom-Sig takes in Single-End or Paired-End read .bam or .bed files generated from ChIP-seq, ATAC-seq, snATAC-seq, or CUT&RUN experiments, among others 
