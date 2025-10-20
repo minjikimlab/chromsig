@@ -84,7 +84,7 @@ Two test files have been included in the `chromsig` directory -- the bed file co
 ```
 sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed chromsig_test_file.bed --dir <PATH>/chromsig/v0.0.4/Data_Directory/ --r hg38_test --fdr 0.1 --num 10 --type SE --modload true
 ```
-A folder Chromsig_Test.zip is included in the main `chromsig` directory, which includes the results of running the test files.
+A folder Chromsig_Test_Results.zip is included in [this dropbox folder](https://www.dropbox.com/scl/fo/dri58rnvghvbswzks5ox6/AFz6TKN7NbiASQMMI3HHo8c?rlkey=jel3nvo6azx5t89w76jxa5cuj&st=mcj5touo&dl=0) -- the Chromsig_Test_Results.zip folder contains the results of running the test files.
 
 ## Citation
 "Chrom-Sig: de-noising 1-dimensional genomic profiles by signal processing methods" by Nandita J. Gupta, Zachary Apell, and Minji Kim. [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.08.12.670000v1) (2025), 670000.
