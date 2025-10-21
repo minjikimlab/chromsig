@@ -31,7 +31,7 @@ source pyBedGraph/bin/activate
 ### Required Modules
 Navigate to the directory `chromsig/v0.0.4`.
 
-Install all required packages listed in [requirements.txt](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/requirements.txt) using the following command:
+Install all required packages listed in [requirements.txt](https://github.com/minjikimlab/chromsig/blob/main/v0.0.4/requirements.txt) using the following command:
 
 `pip install -r requirements.txt`
 
@@ -49,7 +49,7 @@ In each of the bash files (files ending in .sh), modify the parameters
 to match the account using which you are submitting the job, the output directory for the job report, the output directory for any error reports, and the email address you want the job report to be mailed to.
 
 ## Running Chrom-Sig
-In the same directory `chromsig/v0.0.4`, create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.3/hg38.chrom.sizes)).
+In the same directory `chromsig/v0.0.4`, create a folder called Data_Directory. In this folder, upload your input .bam or .bed file, and your reference genome sizes file (ex: [hg38.chrom.sizes](https://github.com/minjikimlab/chromsig/blob/main/v0.0.4/hg38.chrom.sizes)).
 Return to `chromsig/v0.0.4`, and in your terminal enter the following command:
 
 `sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed <BAM/BED> --dir <PATH_TO_DATA_DIR> --r <GENOME> --fdr <FDR_THRESH> --num <NUM_OF_PSEUDO_SAMPLES> --type <READ_TYPE> --cov <COVERAGE> --lib <LIBRARY> --plot <TRUE> --modload <TRUE>`
