@@ -7,7 +7,7 @@ All processed data generated using chromsig v0.0.2 and v0.0.3 can be found at [t
 * As an output, Chrom-Sig produces "pass" reads .bed file and .bedgraph files, along with peaks called by SICER on "pass" reads
 
 ## Installation
-This program requires Python 3.9 to be able to run.
+This program requires Python 3.9.12 to be able to run.
 Start by installing Chrom-Sig using the following command:
 ```
 git clone https://github.com/minjikimlab/chromsig.git
