@@ -47,7 +47,3 @@ bedtools intersect -wao -a <(cut -f1-3 "$F") -b "$GM12878_ANNOT" \
 | awk -v OFS="\t" '{print $1";"$2}' \
 | awk -v OFS="\t" -F';' '{print $1,$2,$3,$4,$5}' \
 > "$OUTDIR/${FNAME%.bed}_chromhmmanno.bed"
-#for f in data/*.bed; 
-#do echo ${f}; 
-#cat ${f} | cut -f1,2,3 | bedtools intersect -wao -a - -b BASIC_chromHMM_GM12878_hg38_Broad_UCSC.bed | cut -f1,2,3,7,8 | awk -v OFS="\t" '{ print $1";"$2";"$3";"$4, $5 }' | awk '{soma[$1]+=$2} END {for (item in soma) print item, soma[item]}' | sort | awk -v OFS="\t" '{print $1";"$2}' | awk -v OFS="\t" -F';' '{print $1,$2,$3,$4,$5}' > "${f/.bed}"_chromhmmanno.bed; done
-
