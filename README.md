@@ -65,11 +65,15 @@ EXAMPLE:
 We recommend allocating about an hour of runtime and 25 GB of memory per 50 million paired-end reads. The results presented in the manuscript have been produced by running Chrom-Sig with --num 5000 --fdr 0.1 or --num 5000 --fdr 0.2.  
 
 ## Testing Chrom-Sig
-Two test files have been included in the `chromsig` directory -- the bed file contains test data from chr18 of the GM12878_CTCF_ChIP-seq_ENCFF453EJM.bam file, and the hg38_test.chrom.sizes file contains the size of chr18 needed to run this data. Move both of these files to your Data Directory folder `chromsig/v0.0.4/Data_Directory`. Navigate back to `chromsig/v0.0.5`, and run the following command:
+Two test files have been included in the `chromsig` directory -- the bed file contains test data from chr18 of the GM12878_CTCF_ChIP-seq_ENCFF453EJM.bam file, and the hg38_test.chrom.sizes file contains the size of chr18 needed to run this data. Move both of these files to your Data Directory folder `chromsig/v0.0.5/Data_Directory`. Navigate back to `chromsig/v0.0.5`, and run the following command:
 ```
 sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed chromsig_test_file.bed --dir <PATH>/chromsig/v0.0.5/Data_Directory/ --r hg38_test --fdr 0.1 --num 10 --type SE --cov 0.02
 ```
 A folder Chromsig_Test_Results.zip is included in [this dropbox folder](https://www.dropbox.com/scl/fo/dri58rnvghvbswzks5ox6/AFz6TKN7NbiASQMMI3HHo8c?rlkey=jel3nvo6azx5t89w76jxa5cuj&st=mcj5touo&dl=0) -- the Chromsig_Test_Results.zip folder contains the results of running the test files.
+Since SICER does not take hg38_test as a reference genome input, the SICER peaks file for the test was generated separately using the command:
+```
+sicer -t <PATH>/chromsig/v0.0.5/Data_Directory/chromsig_test_file/file_EnrichTest_FDR_0.1_pseudoRead_10/file_total_FDR_0.1_pseudoRead_10_pass_pileup.bed -s hg38
+```
 
 ## Citation
 "Chrom-Sig: de-noising 1-dimensional genomic profiles by signal processing methods" by Nandita J. Gupta, Zachary Apell, and Minji Kim. [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.08.12.670000v1) (2025), 670000.
