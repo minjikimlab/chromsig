@@ -70,7 +70,7 @@ Two test files have been included in the `chromsig` directory -- the bed file co
 sbatch multiscript_bam2freq_enrich_bg.sh --bamorbed chromsig_test_file.bed --dir <PATH>/chromsig/v0.0.5/Data_Directory/ --r hg38_test --fdr 0.1 --num 10 --type SE --cov 0.02
 ```
 A folder Chromsig_Test_Results.zip is included in [this dropbox folder](https://www.dropbox.com/scl/fo/dri58rnvghvbswzks5ox6/AFz6TKN7NbiASQMMI3HHo8c?rlkey=jel3nvo6azx5t89w76jxa5cuj&st=mcj5touo&dl=0) -- the Chromsig_Test_Results.zip folder contains the results of running the test files.
-Since SICER does not take hg38_test as a reference genome input, the SICER peaks file for the test was generated separately using the command:
+Since SICER does not take hg38_test as a reference genome input, the SICER peaks file for the test was generated separately from inside the `chromsig/v0.0.5/Data_Directory/chromsig_test_file/file_EnrichTest_FDR_0.1_pseudoRead_10` directory using the command:
 ```
 sicer -t <PATH>/chromsig/v0.0.5/Data_Directory/chromsig_test_file/file_EnrichTest_FDR_0.1_pseudoRead_10/file_total_FDR_0.1_pseudoRead_10_pass_pileup.bed -s hg38
 ```
