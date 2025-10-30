@@ -1,0 +1,46 @@
+name: chromsig-env
+channels:
+  - conda-forge
+  - bioconda
+  - pytorch
+  - defaults
+dependencies:
+  - bedtools==2.31.1
+  - contourpy
+  - cycler
+  - cython
+  - dill
+  - fonttools
+  - importlib_resources
+  - intervene
+  - joblib
+  - kiwisolver
+  - matplotlib
+  - multiprocess
+  - numpy
+  - packaging
+  - pandas
+  - patsy
+  - pillow
+  - psutil
+  - pybedgraph==0.5.43
+  - pybedtools
+  - pyparsing
+  - pysam
+  - python==3.9.12
+  - python-dateutil
+  - pytz
+  - samtools
+  - scikit-learn
+  - scipy
+  - seaborn
+  - sicer2==1.0.3
+  - six
+  - statsmodels
+  - threadpoolctl
+  - python-tzdata
+  - zipp
+  - pip
+  - pip:
+      - ipympl==0.9.4
+      - pybedgraph==0.5.43
